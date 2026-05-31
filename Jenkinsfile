@@ -5,7 +5,8 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/Shanmugapriya005/cloudnativeapp.git'
+                git branch: 'main',
+                    url: 'https://github.com/Shanmugapriya005/cloudnativeapp.git'
             }
         }
 
@@ -20,6 +21,5 @@ pipeline {
                 bat 'docker build -t cloudnativeapp .'
             }
         }
-
     }
 }
