@@ -12,13 +12,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'mvn clean package'
+                sh 'mvn clean package'
             }
         }
 
         stage('Docker Build') {
             steps {
-                bat 'docker build -t cloudnativeapp .'
+                sh 'docker build -t cloudnativeapp .'
             }
         }
     }
